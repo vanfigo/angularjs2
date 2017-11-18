@@ -1,4 +1,5 @@
 "use strict";
+//                obligatorio   default                      opcional
 function activar(quien, objeto, momento) {
     if (objeto === void 0) { objeto = "batiseñal"; }
     var mensaje;

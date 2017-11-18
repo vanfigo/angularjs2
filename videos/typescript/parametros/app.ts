@@ -1,3 +1,4 @@
+//                obligatorio   default                      opcional
 function activar( quien:string, objeto:string = "batiseñal", momento?:string) {
   let mensaje:string
   if (momento) {
