@@ -1,9 +1,9 @@
 
 // Uso de Let y Const
-let nombre = "Ricardo Tapia";
-let edad = 23;
+let nombre:string = "Ricardo Tapia";
+let edad:number = 23;
 
-const PERSONAJE = {
+const PERSONAJE:{nombre:string, edad:number} = {
   nombre: nombre,
   edad: edad
 };
@@ -14,7 +14,7 @@ interface Batman {
   nombre:string,
   artesMarciales:string[]
 }
-var batman:Batman = {
+let batman:Batman = {
   nombre: "Bruno Díaz",
   artesMarciales: ["Karate","Aikido","Wing Chun","Jiu-Jitsu"]
 }
@@ -30,11 +30,11 @@ function resultadoDoble( a, b ){
 //       PODER  = opcional
 //       ARMA   = por defecto = "arco"
 function getAvenger( nombre:string, poder?:string, arma:string = "arco" ){
-  var mensaje;
+  let mensaje:string;
   if( poder ){
-     mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
+     mensaje = `${nombre} tiene el poder de: ${poder} y un arma: ${arma}`;
   }else{
-     mensaje = nombre + " tiene un " + poder
+     mensaje = `${nombre} tiene un ${poder}`;
   }
 };
 
@@ -46,8 +46,6 @@ function getAvenger( nombre:string, poder?:string, arma:string = "arco" ){
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
 class Rectangulo {
-  constructor(public base:number, public altura:number){
-
-  }
-  calcular = () => this.base * this.altura;
+  constructor(public base:number, public altura:number){}
+  calcular = ():number => this.base * this.altura;
 }
