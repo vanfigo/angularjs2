@@ -45,3 +45,9 @@ function getAvenger( nombre:string, poder?:string, arma:string = "arco" ){
 //   * altura
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
+class Rectangulo {
+  constructor(public base:number, public altura:number){
+
+  }
+  calcular = () => this.base * this.altura;
+}

@@ -36,3 +36,12 @@ function getAvenger(nombre, poder, arma) {
 //   * altura
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
+var Rectangulo = /** @class */ (function () {
+    function Rectangulo(base, altura) {
+        var _this = this;
+        this.base = base;
+        this.altura = altura;
+        this.calcular = function () { return _this.base * _this.altura; };
+    }
+    return Rectangulo;
+}());
