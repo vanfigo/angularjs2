@@ -26,3 +26,7 @@
 .fadeIn {
   animation-name: fadeIn;
 }
+
+.img-thumbnail {
+  height: 120px !important;
+}

@@ -6,7 +6,7 @@
       <h5 class="card-title">{{hero.nombre}}</h5>
       <p class="card-text">{{hero.bio}}</p>
       <p class="card-text"><small class="text-muted">{{hero.aparicion}}</small></p>
-      <button (click)="verHeroe(i)" type="button" class="btn btn-outline-info btn-block">See more...</button>
+      <button (click)="seeHero(i)" type="button" class="btn btn-outline-info btn-block">See more...</button>
       <a [routerLink]="['/hero', i]" class="btn btn-outline-info btn-block">See more...</a>
     </div>
   </div>

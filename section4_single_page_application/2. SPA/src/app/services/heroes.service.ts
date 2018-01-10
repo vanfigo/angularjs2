@@ -59,6 +59,8 @@ export class HeroesService {
 
   public getHeroes = ():Hero[] => this.heroes;
 
+  public getHero =  (idx:number):Hero => this.heroes[idx]
+
 }
 
 export interface Hero {
