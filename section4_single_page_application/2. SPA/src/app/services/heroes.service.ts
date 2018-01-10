@@ -61,6 +61,14 @@ export class HeroesService {
 
   public getHero =  (idx:number):Hero => this.heroes[idx]
 
+  public searchHeroes = (term:string):Hero[] => {
+    term = term.toLowerCase();
+    let arrHeroes:Hero[] = this.heroes.filter((hero:Hero) => {
+      return hero.nombre.toLowerCase().includes(term);
+    });
+    return arrHeroes;
+  }
+
 }
 
 export interface Hero {
