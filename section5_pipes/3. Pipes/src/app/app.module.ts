@@ -9,6 +9,7 @@ import { registerLocaleData } from '@angular/common';
 
 import { CapitalizedPipe } from './pipes/capitalized.pipe';
 import { SecuredomPipe } from './pipes/securedom.pipe';
+import { PasswordPipe } from './pipes/password.pipe';
 
 registerLocaleData(localeEs);
 
@@ -16,7 +17,8 @@ registerLocaleData(localeEs);
   declarations: [
     AppComponent,
     CapitalizedPipe,
-    SecuredomPipe
+    SecuredomPipe,
+    PasswordPipe
   ],
   imports: [
     BrowserModule

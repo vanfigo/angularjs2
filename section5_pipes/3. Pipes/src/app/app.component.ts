@@ -25,4 +25,5 @@ export class AppComponent {
   } );
   date:Date = new Date();
   video:string = "P4Vb_OkzUU8";
+  hide:boolean = true;
 }
