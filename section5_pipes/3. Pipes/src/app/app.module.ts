@@ -7,18 +7,21 @@ import { AppComponent } from './app.component';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 
+import { CapitalizedPipe } from './pipes/capitalized.pipe';
+
 registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalizedPipe
   ],
   imports: [
     BrowserModule
   ],
   providers: [{
     provide: LOCALE_ID,
-    useValue: 'es'
+    useValue: 'en'
   }],
   bootstrap: [AppComponent]
 })
