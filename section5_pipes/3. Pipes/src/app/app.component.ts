@@ -24,4 +24,5 @@ export class AppComponent {
     setTimeout( () => resolve( 'Data is here!' ), 3500 );
   } );
   date:Date = new Date();
+  video:string = "P4Vb_OkzUU8";
 }

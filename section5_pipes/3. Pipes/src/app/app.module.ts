@@ -8,13 +8,15 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 
 import { CapitalizedPipe } from './pipes/capitalized.pipe';
+import { SecuredomPipe } from './pipes/securedom.pipe';
 
 registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizedPipe
+    CapitalizedPipe,
+    SecuredomPipe
   ],
   imports: [
     BrowserModule
