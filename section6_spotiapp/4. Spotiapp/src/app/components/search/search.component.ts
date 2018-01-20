@@ -9,8 +9,16 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class SearchComponent {
 
-  constructor(public spotifyService:SpotifyService) {
-    this.spotifyService.getArtistas();
+  search:string = '';
+
+  constructor(public spotifyService:SpotifyService) { }
+
+  public searchArtist = () => {
+    if(this.search.length > 0) {
+      this.spotifyService.getArtistas(this.search).subscribe(
+        artists => console.log(artists)
+      );
+    }
   }
 
 }
