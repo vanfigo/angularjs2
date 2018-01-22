@@ -15,7 +15,7 @@ export class SearchComponent {
 
   public searchArtist = () => {
     if(this.search.length > 0) {
-      this.spotifyService.getArtistas(this.search).subscribe(
+      this.spotifyService.getArtists(this.search).subscribe(
         artists => console.log(artists)
       );
     }

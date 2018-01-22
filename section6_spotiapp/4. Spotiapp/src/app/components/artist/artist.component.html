@@ -1,0 +1,43 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-2">
+      <img [src]="artist.images | nophoto" class="img-thumbnail">
+    </div>
+    <div class="col-md-10 text-center">
+      <h1 class="text-capitalize">{{ artist.name }}</h1>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <button type="button" class="btn btn-outline-danger btn-block" routerLink='/search'>Go back</button>
+        </div>
+        <div class="col-md-3">
+          <a class="btn btn-outline-success btn-block" [href]="artist.external_urls?.spotify" target="_blank">Open in Spotify</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-dark">
+        <thead>
+          <th>#</th>
+          <th class="col-md-1">Photo</th>
+          <th>Name</th>
+          <th>Popularity</th>
+          <th>Listen</th>
+        </thead>
+        <tr *ngFor="let track of topTracks; let idx = index">
+          <td>{{ idx + 1 }}</td>
+          <td><img [src]="track.album.images | nophoto" class="img-thumbnail"></td>
+          <td>{{ track.name }}</td>
+          <td>{{ track.popularity }}%</td>
+          <td>
+            <audio controls>
+              <source [src]="track.preview_url" >
+            </audio>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

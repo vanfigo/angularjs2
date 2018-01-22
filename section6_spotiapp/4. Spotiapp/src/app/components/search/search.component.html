@@ -8,7 +8,7 @@
       <h1 class="text-capitalize">{{ search }}</h1>
       <hr>
       <div class="row">
-        <div class="col-md-3 text-center" *ngFor="let artist of spotifyService.artists">
+        <div class="col-md-3 text-center" *ngFor="let artist of spotifyService.artists" [routerLink]="['/artist', artist.id]">
           <img [src]="artist.images | nophoto" class="img-thumbnail">
           <p>{{ artist.name }}</p>
         </div>
