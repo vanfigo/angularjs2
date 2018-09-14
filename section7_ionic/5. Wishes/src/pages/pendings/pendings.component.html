@@ -6,11 +6,7 @@
 
 <ion-content>
   <img src="../../assets/imgs/pendientes.jpg" alt="">
-  <ion-list>
-    <button ion-item *ngFor="let list of wishesProvider.lists" (click)="selectedList(list)">
-      {{ list.title }}
-    </button>
-  </ion-list>
+  <app-lists></app-lists>
 
   <ion-fab bottom right>
     <button ion-fab (click)="addList()"><ion-icon name="add"></ion-icon></button>

@@ -5,22 +5,32 @@
 </ion-header>
 
 <ion-content>
+
   <ion-list>
     <ion-item>
       <ion-label floating>New item</ion-label>
       <ion-input type="text" [(ngModel)]="itemName" (keyup.enter)="addItem()"></ion-input>
     </ion-item>
   </ion-list>
+
   <ion-list *ngIf="list.items.length > 0">
+
     <ion-list-header>
       Tasks to do
     </ion-list-header>
-    <button *ngFor="let item of list.items"
-            ion-item detail-none class="animated fadeInDown"
-            (click)="updateItem(item)">
-      <ion-icon *ngIf="!item.completed" name="square-outline" item-start> </ion-icon>
-      <ion-icon *ngIf="item.completed" name="checkbox-outline" item-start> </ion-icon>
-      {{item.name}}
-    </button>
+    <ion-item-sliding *ngFor="let item of list.items; let i = index"
+                      class="animated fadeInDown">
+      <button ion-item detail-none (click)="updateItem(item)">
+        <ion-icon *ngIf="!item.completed" name="square-outline" item-start> </ion-icon>
+        <ion-icon *ngIf="item.completed" name="checkbox-outline" item-start> </ion-icon>
+        {{item.name}}
+      </button>
+      <ion-item-options side="right">
+        <button ion-button icon-only color="danger" (click)="deleteItem(i)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
   </ion-list>
 </ion-content>

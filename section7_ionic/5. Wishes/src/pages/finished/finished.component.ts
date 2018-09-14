@@ -7,5 +7,4 @@ import { WishesProvider } from "../../providers/wishes.provider";
 })
 export class FinishedPage {
   constructor(public wishesProvider:WishesProvider) {}
-
 }

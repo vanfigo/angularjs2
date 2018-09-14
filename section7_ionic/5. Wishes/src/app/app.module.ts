@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WishesProvider } from '../providers/wishes.provider';
 import { AddPage } from '../pages/add/add.component';
+import { CompletedFilterPipe } from '../pipes/completed-filter/completed-filter';
+import { ListsComponent } from '../components/lists.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AddPage } from '../pages/add/add.component';
     TabsPage,
     PendingsPage,
     FinishedPage,
-    AddPage
+    AddPage,
+    CompletedFilterPipe,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { AddPage } from '../pages/add/add.component';
     TabsPage,
     PendingsPage,
     FinishedPage,
-    AddPage
+    AddPage,
+    ListsComponent
   ],
   providers: [
     StatusBar,

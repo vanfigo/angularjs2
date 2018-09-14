@@ -11,10 +11,8 @@ import { AddPage } from "../add/add.component";
 export class PendingsPage {
   constructor(public wishesProvider:WishesProvider,
               private navController: NavController,
-              private alertController: AlertController) {}
+              private alertController: AlertController) {
 
-  selectedList = (list: List) => {
-    console.log(list);
   }
 
   addList = () => {
@@ -42,4 +40,5 @@ export class PendingsPage {
 
     prompt.present();
   }
+
 }
