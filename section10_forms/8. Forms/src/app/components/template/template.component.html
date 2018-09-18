@@ -1,0 +1,130 @@
+<h4>Forms <small>template</small></h4>
+<hr>
+<form novalidate class="needs-validation" [ngClass]="{'was-validated': form.submitted}" (ngSubmit)="save(form)" #form="ngForm">
+
+  <div>
+
+    <div class="form-group row" [ngClass]="{'was-validated': name.dirty || name.touched}">
+      <label class="col-md-2 col-form-label">Name</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Name"
+               required
+               minlength="3"
+               [(ngModel)]="user.name"
+               name="name"
+               #name="ngModel">
+         <div *ngIf="name.errors?.required" class="invalid-tooltip">
+           This field is required
+         </div>
+         <div *ngIf="name.errors?.minlength" class="invalid-tooltip">
+           This field is {{name.errors.minlength.requiredLength}} characters minimum
+         </div>
+      </div>
+    </div>
+
+    <div class="form-group row" [ngClass]="{'was-validated': lastName.dirty || lastName.touched}">
+      <label class="col-md-2 col-form-label">Last name</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Last name"
+               required
+               [(ngModel)]="user.lastName"
+               name="lastName"
+               #lastName="ngModel">
+         <div *ngIf="lastName.errors?.required" class="invalid-tooltip">
+           This field is required
+         </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-group row" [ngClass]="{'was-validated': email.dirty || email.touched}">
+    <label class="col-md-2 col-form-label">Email</label>
+    <div class="col-md-8">
+
+      <input class="form-control"
+             type="email"
+             placeholder="Email"
+             required
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             [(ngModel)]="user.email"
+             name="email"
+             #email="ngModel">
+       <div *ngIf="email.errors?.required" class="invalid-tooltip">
+         This field is required
+       </div>
+       <div *ngIf="email.errors?.pattern" class="invalid-tooltip">
+         This is invalid format for an email
+       </div>
+    </div>
+  </div>
+
+
+  <div class="form-group row" [ngClass]="{'was-validated': country.dirty || country.touched}">
+    <label class="col-md-2 col-form-label">Country</label>
+    <div class="col-md-8">
+      <select class="form-control"
+              [(ngModel)]="user.country"
+              name="country"
+              #country="ngModel"
+              required>
+              <option value="">Select a country</option>
+              <option *ngFor="let country of countries"
+                      [value]="country.code">{{country.name}}</option>
+      </select>
+      <div *ngIf="country.errors?.required" class="invalid-tooltip">
+        This field is required
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group row" [ngClass]="{'was-validated': gender.dirty || gender.touched}">
+    <label class="col-md-2 col-form-label">Country</label>
+    <div class="col-md-8">
+      <div class="form-check form-check-inline">
+        <input  class="form-check-input"
+                type="radio"
+                name="gender"
+                [(ngModel)]="user.gender"
+                value="Male"
+                #gender="ngModel"
+                required>
+        <label class="form-check-label">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input  class="form-check-input"
+                type="radio"
+                name="gender"
+                [(ngModel)]="user.gender"
+                value="Female"
+                required>
+        <label class="form-check-label">Female</label>
+      </div>
+      <div *ngIf="gender.errors?.required" class="invalid-tooltip">
+        This field is required
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group row" >
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary" [disabled]="form.invalid">
+        Save
+      </button>
+    </div>
+  </div>
+
+  <pre>
+    {{user | json}}
+  </pre>
+
+</form>
