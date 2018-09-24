@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-8">
+    <h3>Heroe <small>{{heroe.name}}</small></h3>
+  </div>
+  <div class="col-md-4 text-right">
+    <button type="button" name="button" class="btn btn-outline-danger btn-sm"
+            [routerLink]="['heroes']">
+      Go back
+    </button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12 my-2">
+  </div>
+</div>
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <form (ngSubmit)="save()" #form="ngForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control"
+              [(ngModel)]="heroe.name"
+              name="name"
+              placeholder="Heroe name"
+              required>
+      </div>
+      <div class="form-group">
+        <label>House</label>
+        <select class="form-control" name=""
+                [(ngModel)]="heroe.house"
+                name="house">
+          <option value="Marvel">Marvel</option>
+          <option value="DC">DC</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Bio</label>
+        <textarea type="text" class="form-control"
+              [(ngModel)]="heroe.bio"
+              name="bio">
+        </textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="mr-2 btn btn-outline-primary"
+                [disabled]="!form.valid">
+          Save changes
+        </button>
+        <button type="button" name="button" class="btn btn-outline-secondary"
+                (click)="addNewHeroe(form)">
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
