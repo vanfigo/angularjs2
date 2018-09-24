@@ -20,7 +20,7 @@
 .app-mensajes{
   overflow-y:scroll;
   height:270px;
-  background:gray;
+  background:#ccc;
   padding: 5px;
 }
 
