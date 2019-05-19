@@ -1,0 +1,6 @@
+<div class="card" [routerLink]="['/movie', movie.id]">
+  <img src="{{movie.backdrop_path | moviePhoto}}" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.original_title}}</h5>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<p class="display-3">On theaters</p>
+<div class="row">
+  <div class="card-columns">
+    <div *ngFor="let movie of onTheaterMovies">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+</div>
+<p class="display-3">Popular Movies</p>
+<div class="row">
+  <div class="card-columns">
+    <div *ngFor="let movie of popularMovies">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+</div>
+<p class="display-3">Popular for kids</p>
+<div class="row">
+  <div class="card-columns">
+    <div *ngFor="let movie of kidPopulars">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+</div>
