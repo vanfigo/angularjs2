@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-3">
+    <h3>Select files</h3>
+    <div class="card" appNgDropFiles (mouseOn)="onElement = $event" [files]="files"
+          [ngClass]="{'border border-primary': onElement}">
+      <div class="card-header" [ngClass]="{'bg-primary text-light': onElement}">
+        Drop files here
+      </div>
+      <img src="https://png.icons8.com/cotton/empty/500" class="card-img-top">
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h3>Load Files</h3>
+    <div class="my-2">
+      <button type="button" class="btn btn-success" (click)="loadImages()" [disabled]="files.length === 0">Load to Firebase</button>
+      <button type="button" class="btn btn-danger ml-2" (click)="clean()">Clean</button>
+    </div>
+    <table class="table table-bordered table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>Filename</th>
+          <th>Size</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let file of files" [ngClass]="{'bg-success text-light': file.progress >= 100}">
+          <td>{{file.fileName}}</td>
+          <td>{{file.file.size / 1024 / 1024 | number: '.2-2'}} mB</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [style.width.%]="file.progress"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
